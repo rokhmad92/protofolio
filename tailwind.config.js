@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'backgroundWave' : '#0099ff',
+      },
       fontFamily: {
         'Alkatra': ['Alkatra']
       },
@@ -16,11 +19,11 @@ module.exports = {
         },
         startupHome: {
           '0%': { transform: 'translateX(-100rem)' },
-          '90%': { transform: 'translateX(3rem)' },
+          '90%': { transform: 'translateX(2rem)' },
           '100%': { transform: 'translateX(0rem)' },
         },
         startupSkill: {
-          '0%': { transform: 'translateY(100rem)' },
+          '0%': { transform: 'translateY(-100rem)' },
           '100%': { transform: 'translateY(0rem)' },
         },
         startupSosmed: {

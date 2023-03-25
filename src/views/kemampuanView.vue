@@ -1,5 +1,13 @@
 <template>
-<h1>aku adalah kemampuan</h1>
+    <div class="animate-startupSkill md:flex xl:justify-evenly md:mt-11">
+        <br>
+        <div>
+            
+        </div>
+        <div>
+
+        </div>
+    </div>
 </template>
 
 <script>

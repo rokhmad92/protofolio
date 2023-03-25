@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
   <!-- END google Font -->
 
-  <nav class="flex bg-blue-400 justify-content-around animate-startupNav" v-click-outside="hide">
+  <nav class="flex bg-blue-400 justify-content-around animate-startupNav fixed top-0 left-0 right-0" v-click-outside="hide">
     <div class="grow my-auto mx-9">
       <h3 class="md:text-3xl xl:text-3xl text-3xl font-medium text-slate-100 font-Alkatra">Rokhmad Yulian</h3>
     </div>
@@ -25,7 +25,7 @@
     <!-- hamburger menu -->
       <div class="grow-0 md:hidden mr-4 flex my-auto">
         <div class="p-3 cursor-pointer rounded-md hover:bg-sky-500" @click="hamburgerClick">
-          <img src="../public/img/hamburgerMenu.png" class="w-8">
+          <img src="../public/img/hamburgerMenuWhite.png" class="w-8">
         </div>
       </div>
 
@@ -43,7 +43,7 @@
 
       <!-- hide Hamburger -->
       <div v-if="showHamburger" class="md:hidden animate-hamburger absolute left-0 right-0 cursor-pointer" @click="hamburgerHide" :class="{'animate-hideHamburger': hiddenHamburger}">
-        <h3 class="text-xl mt-16 text-center bg-blue-400 rounded-b-xl pt-2">^</h3>
+        <h3 class="text-xl mt-16 text-center bg-blue-400 rounded-b-xl pt-2 text-slate-100">^</h3>
       </div>
     <!-- END hamburger menu -->
   </nav>

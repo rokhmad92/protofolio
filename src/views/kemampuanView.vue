@@ -176,7 +176,6 @@
             <br>
         </div>
     </div>
-    <!-- <a href="#nav">coba</a> -->
 </template>
 
 <script>

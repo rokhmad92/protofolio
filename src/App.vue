@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
   <!-- END google Font -->
 
-  <nav class="flex bg-blue-400 justify-content-around animate-startupNav fixed top-0 left-0 right-0 z-10" v-click-outside="hide">
+  <nav class="flex bg-blue-400/[0.9] justify-content-around animate-startupNav fixed top-0 left-0 right-0 z-10" v-click-outside="hide">
     <div class="grow my-auto mx-9">
       <h3 class="md:text-3xl xl:text-3xl text-3xl font-medium text-slate-100 font-Alkatra">Rokhmad Yulian</h3>
     </div>
@@ -40,10 +40,15 @@
 
       <!-- hide Hamburger -->
       <div v-if="showHamburger" class="md:hidden animate-hamburger absolute left-0 right-0 cursor-pointer" @click="hamburgerHide" :class="{'animate-hideHamburger': hiddenHamburger}">
-        <h3 class="text-xl mt-16 text-center bg-blue-400 rounded-b-xl pt-2 text-slate-100">^</h3>
+        <h3 class="text-xl mt-16 text-center bg-blue-400/[0.9] rounded-b-xl pt-2 text-slate-100">^</h3>
       </div>
     <!-- END hamburger menu -->
   </nav>
+
+  <!-- scroll to top -->
+  <div ref="scrollTopButton" @click="toTop" class="hidden fixed bottom-3 right-5 w-10 h-10 bg-blue-400 hover:bg-blue-300 rounded-full cursor-pointer">
+      <h1 class="text-center p-1 text-slate-100 text-3xl">^</h1>
+  </div>
   <router-view/>
 </template>
 
@@ -68,7 +73,26 @@ export default {
       }, 1000)
       this.hiddenHamburger = true
     },
-  }
+    handleScroll() {
+      const scrollBtn = this.$refs.scrollTopButton
+
+      if(window.scrollY > 0 ) {
+        scrollBtn.classList.remove("hidden")
+      } else {
+        scrollBtn.classList.add("hidden")
+      }
+    },
+    toTop() {
+      window.scrollTo({top: 0})
+    }
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll)
+  },
+  beforeUnmount() {
+    window.addEventListener("scroll", this.handleScroll)
+  },
 }
 </script>
 

@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
   <!-- END google Font -->
 
-  <nav class="flex bg-blue-400 justify-content-around animate-startupNav fixed top-0 left-0 right-0" v-click-outside="hide">
+  <nav class="flex bg-blue-400 justify-content-around animate-startupNav fixed top-0 left-0 right-0 z-10" v-click-outside="hide">
     <div class="grow my-auto mx-9">
       <h3 class="md:text-3xl xl:text-3xl text-3xl font-medium text-slate-100 font-Alkatra">Rokhmad Yulian</h3>
     </div>
@@ -17,9 +17,6 @@
     <div class="md:flex grow-0 hidden xl:mr-4">
       <router-link to="kemampuan" class="nav xl:px-5 md:px-3 hover:bg-sky-500 xl:text-xl md:text-md text-base rounded-xl text-slate-100 hover:text-slate-900 my-auto py-5">Kemampuan</router-link>
     </div>
-    <div class="md:flex grow-0 hidden xl:mr-4">
-      <router-link to="sosmed" class="nav xl:px-5 md:px-3 hover:bg-sky-500 xl:text-xl md:text-md text-base rounded-xl text-slate-100 hover:text-slate-900 my-auto py-5">Sosial Media</router-link>
-    </div>
     <!-- End Link -->
 
     <!-- hamburger menu -->
@@ -29,15 +26,15 @@
         </div>
       </div>
 
-      <div class="hamburgerActive md:hidden flex justify-between animate-hamburger" v-if="showHamburger" :class="{'animate-hideHamburger': hiddenHamburger}">
+      <div class="hamburgerActive md:hidden flex animate-hamburger" v-if="showHamburger" :class="{'animate-hideHamburger': hiddenHamburger}">
+        <div class="grow my-auto mx-9">
+          <h3 class="text-2xl font-medium text-slate-100 font-Alkatra">Rokhmad Yulian</h3>
+        </div>
         <div class="flex">
-          <router-link to="/" class="hamburger px-2 py-6 text-center hover:bg-sky-500 rounded-xl text-slate-100 hover:text-slate-900">Tentang Saya</router-link>
+          <router-link to="/" class="hamburger px-2 py-6 text-center mx-2 hover:bg-sky-500 rounded-xl text-slate-100 hover:text-slate-900">Tentang Saya</router-link>
         </div>
         <div class="flex">
           <router-link to="kemampuan" class="hamburger px-2 py-6 text-center hover:bg-sky-500 rounded-xl text-slate-100 hover:text-slate-900">Kemampuan</router-link>
-        </div>
-        <div class="flex">
-          <router-link to="sosmed" class="hamburger px-2 py-6 text-center hover:bg-sky-500 rounded-xl text-slate-100 hover:text-slate-900">Sosial Media</router-link>
         </div>
       </div>
 

@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import skillView from '../views/kemampuanView.vue'
-import sosmedView from '../views/sosmedView.vue'
-import kontakView from '../views/kontakView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +10,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'R.Y | Beranda'
+        title: 'R.Y | Tentang Saya'
       },
     },
     {
@@ -20,23 +18,7 @@ const router = createRouter({
       name: 'skill',
       component: skillView,
       meta: {
-        title: 'R.Y | Skill'
-      }
-    },
-    {
-      path: '/sosmed',
-      name: 'sosmed',
-      component: sosmedView,
-      meta: {
-        title: 'R.Y | Sosmed'
-      }
-    },
-    {
-      path: '/kontak',
-      name: 'kontak',
-      component: kontakView,
-      meta: {
-        title: 'R.Y | Kontak'
+        title: 'R.Y | Kemampuan'
       }
     },
   ]

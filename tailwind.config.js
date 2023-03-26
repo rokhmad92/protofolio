@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        '2/7': '25%',
+      },
       colors: {
         'backgroundWave' : '#0099ff',
       },
@@ -23,12 +26,9 @@ module.exports = {
           '100%': { transform: 'translateX(0rem)' },
         },
         startupSkill: {
-          '0%': { transform: 'translateY(-100rem)' },
+          '0%': { transform: 'translateY(100rem)' },
+          '90%': { transform: 'translateX(-2rem)' },
           '100%': { transform: 'translateY(0rem)' },
-        },
-        startupSosmed: {
-          '0%': { transform: 'translateX(100rem)' },
-          '100%': { transform: 'translateX(0rem)' },
         },
         hideNav: {
           '0%': { transform: 'translateY(0rem)' },

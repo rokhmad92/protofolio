@@ -160,7 +160,7 @@
                     
                     <p class="text-slate-800">Freelance Web Developer</p>
                     <hr class="underline-skills mb-1">
-                    <p class="text-slate-800">2022-Sekarang</p>
+                    <p class="text-slate-800">2022 - Sekarang</p>
                     <hr class="underline-skills">
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 <div>
                     <p class="text-slate-800">Magang IT Support PT.Guntner Indonesia</p>
                     <hr class="underline-skills mb-1">
-                    <p class="text-slate-800">2019-2020</p>
+                    <p class="text-slate-800">2019 - 2020</p>
                     <hr class="underline-skills">
                 </div>
             </div>

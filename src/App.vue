@@ -51,7 +51,7 @@
   </div>
 
   <!-- Sosmed -->
-  <div ref="link" class="flex fixed bg-slate-200/80 -right-[150px] top-52 pl-1 rounded-l-md flex-col">
+  <div ref="link" class="flex fixed bg-slate-200/80 top-52 pl-1 rounded-l-md flex-col" :class="{'-right-[150px]': sosmed}, {'-right-[0px]': hidesosmed}">
     <div>
       <p ref="showLink" @click="toggleLink" class="text-center cursor-pointer text-3xl float-left font-bold mb-3" v-text="left"></p>
       <p ref="hiddenLink" @click="toggleLinkHide" class="text-center cursor-pointer text-3xl float-left font-bold mb-3 hidden" v-text="right"></p>
@@ -90,6 +90,8 @@ export default {
       hiddenHamburger: false,
       left : '<',
       right : '>',
+      sosmed: true,
+      hidesosmed: false,
     }
   },
   methods: {
@@ -126,9 +128,9 @@ export default {
 
         showLink.classList.add('hidden')
         hiddenLink.classList.remove('hidden')
-        link.classList.remove('-right-[-150px]')
         setTimeout(() => {
-          link.classList.add('-right-[0px]')
+          this.hidesosmed = !this.hidesosmed
+          this.sosmed = !this.sosmed
         }, 2000)
         link.classList.remove('animate-hiddenLink')
         link.classList.add('animate-showLink')
@@ -140,9 +142,9 @@ export default {
 
         showLink.classList.remove('hidden')
         hiddenLink.classList.add('hidden')
-        link.classList.remove('-right-[0px]')
         setTimeout(() => {
-          link.classList.add('-right-[-150px]')
+          this.hidesosmed = !this.hidesosmed
+          this.sosmed = !this.sosmed
         }, 2000)
         link.classList.add('animate-hiddenLink')
         link.classList.remove('animate-showLink')
@@ -158,7 +160,7 @@ export default {
         window.open('https://api.whatsapp.com/send/?phone=62895336397742', '_blank');
       },
       link() {
-        window.open('https://www.instagram.com/rokhmad_yulian/', '_blank');
+        window.open('https://www.linkedin.com/in/rokhmad-yulian-01b80b212/', '_blank');
       },
       github() {
         window.open('https://github.com/rokhmad92', '_blank');

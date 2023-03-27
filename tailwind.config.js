@@ -36,12 +36,12 @@ module.exports = {
           '100%': { transform: 'translateY(-20rem)' },
         },
         showLink: {
-          '0%': { transform: 'translateX(0rem)' },
+          '0%': { transform: 'translateX(0px)' },
           '100%': { transform: 'translateX(-150px)' },
         },
         hiddenLink: {
-          '0%': { transform: 'translateX(-150px)' },
-          '100%': { transform: 'translateX(0rem)' },
+          '0%': { transform: 'translateX(0px)' },
+          '100%': { transform: 'translateX(150px)' },
         },
       },
       animation: {
@@ -51,8 +51,8 @@ module.exports = {
         startupSosmed: 'startupSosmed 4s ease-in-out 1',
         hamburger: 'startupNav 1s ease-in-out 1',
         hideHamburger: 'hideNav 2s ease-in-out 1',
-        showLink: 'showLink 2s ease-in 1',
-        hiddenLink: 'hiddenLink 2s ease-in 1',
+        showLink: 'showLink 2s ease-in-out 1',
+        hiddenLink: 'hiddenLink 2s ease-in-out 1',
       }
     },
   },

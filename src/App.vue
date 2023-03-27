@@ -49,6 +49,34 @@
   <div ref="scrollTopButton" @click="toTop" class="hidden fixed bottom-3 right-5 w-10 h-10 bg-blue-400 hover:bg-blue-300 rounded-full cursor-pointer">
       <h1 class="text-center p-1 text-slate-100 text-3xl">^</h1>
   </div>
+
+  <!-- Sosmed -->
+  <div ref="link" class="flex fixed bg-slate-200/80 -right-[150px] top-52 pl-1 rounded-l-md flex-col">
+    <div>
+      <p ref="showLink" @click="toggleLink" class="text-center cursor-pointer text-3xl float-left font-bold mb-3" v-text="left"></p>
+      <p ref="hiddenLink" @click="toggleLinkHide" class="text-center cursor-pointer text-3xl float-left font-bold mb-3 hidden" v-text="right"></p>
+    </div>
+    <div class="flex mb-2 cursor-pointer hover:bg-blue-200 hover:rounded-l-md" @click="fb">
+        <img src="../../public/img/fb.png" class="w-8">
+        <p class="ml-1 hover:underline">Rokhmad Yulian</p>
+    </div>
+    <div class="flex mb-2 cursor-pointer hover:bg-blue-200 hover:rounded-l-md" @click="ig">
+      <img src="../../public/img/ig.png" class="w-8">
+      <p class="ml-1 hover:underline">rokhmad_yulian</p>
+    </div>
+    <div class="flex mb-2 cursor-pointer hover:bg-blue-200 hover:rounded-l-md" @click="wa">
+      <img src="../../public/img/wa.png" class="w-8">
+      <p class="ml-1 hover:underline">+62 895-3363-97742</p>
+    </div>
+    <div class="flex mb-2 cursor-pointer hover:bg-blue-200 hover:rounded-l-md" @click="link">
+      <img src="../../public/img/link.png" class="w-8">
+      <p class="ml-1 hover:underline">Lorem, ipsum dolor.</p>
+    </div>
+    <div class="flex mb-2 cursor-pointer hover:bg-blue-200 hover:rounded-l-md" @click="github">
+      <img src="../../public/img/git.png" class="w-8">
+      <p class="ml-1 hover:underline">rokhmad92</p>
+    </div>
+  </div>
   <router-view/>
 </template>
 
@@ -60,6 +88,8 @@ export default {
     return {
       showHamburger: false,
       hiddenHamburger: false,
+      left : '<',
+      right : '>',
     }
   },
   methods: {
@@ -73,18 +103,67 @@ export default {
       }, 1000)
       this.hiddenHamburger = true
     },
-    handleScroll() {
-      const scrollBtn = this.$refs.scrollTopButton
+    // scroll
+      handleScroll() {
+        const scrollBtn = this.$refs.scrollTopButton
 
-      if(window.scrollY > 0 ) {
-        scrollBtn.classList.remove("hidden")
-      } else {
-        scrollBtn.classList.add("hidden")
-      }
-    },
-    toTop() {
-      window.scrollTo({top: 0})
-    }
+        if(window.scrollY > 0 ) {
+          scrollBtn.classList.remove("hidden")
+        } else {
+          scrollBtn.classList.add("hidden")
+        }
+      },
+      toTop() {
+        window.scrollTo({top: 0})
+      },
+    // END scroll
+
+    // redirect link
+      toggleLink() {
+        const showLink = this.$refs.showLink
+        const hiddenLink = this.$refs.hiddenLink
+        const link = this.$refs.link
+
+        showLink.classList.add('hidden')
+        hiddenLink.classList.remove('hidden')
+        link.classList.remove('-right-[-150px]')
+        setTimeout(() => {
+          link.classList.add('-right-[0px]')
+        }, 2000)
+        link.classList.remove('animate-hiddenLink')
+        link.classList.add('animate-showLink')
+      },
+      toggleLinkHide() {
+        const showLink = this.$refs.showLink
+        const hiddenLink = this.$refs.hiddenLink
+        const link = this.$refs.link
+
+        showLink.classList.remove('hidden')
+        hiddenLink.classList.add('hidden')
+        link.classList.remove('-right-[0px]')
+        setTimeout(() => {
+          link.classList.add('-right-[-150px]')
+        }, 2000)
+        link.classList.add('animate-hiddenLink')
+        link.classList.remove('animate-showLink')
+      },
+
+      fb() {
+        window.open('https://www.facebook.com/rokhmad.yulian/', '_blank');
+      },
+      ig() {
+        window.open('https://www.instagram.com/rokhmad_yulian/', '_blank');
+      },
+      wa() {
+        window.open('https://api.whatsapp.com/send/?phone=62895336397742', '_blank');
+      },
+      link() {
+        window.open('https://www.instagram.com/rokhmad_yulian/', '_blank');
+      },
+      github() {
+        window.open('https://github.com/rokhmad92', '_blank');
+      },
+    // END redirect link
   },
 
   mounted() {

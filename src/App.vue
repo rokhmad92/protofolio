@@ -7,7 +7,7 @@
 
   <nav class="flex bg-blue-400/[0.9] dark:bg-slate-700/[0.9] justify-content-around animate-startupNav fixed top-0 left-0 right-0 z-10" v-click-outside="hide">
     <div class="grow my-auto mx-9">
-      <h3 class="md:text-3xl xl:text-3xl text-3xl font-medium text-slate-100 font-Alkatra">Rokhmad Yulian</h3>
+      <h3 class="md:text-3xl xl:text-3xl text-3xl font-medium text-slate-50 font-Alkatra">Rokhmad Yulian</h3>
     </div>
 
     <!-- Link -->

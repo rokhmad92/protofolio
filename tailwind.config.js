@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
@@ -11,6 +12,7 @@ module.exports = {
       },
       colors: {
         'backgroundWave' : '#0099ff',
+        'darkWave' : '#334155',
       },
       fontFamily: {
         'Alkatra': ['Alkatra']

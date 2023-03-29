@@ -25,6 +25,10 @@
 
     <!-- hamburger menu -->
       <div class="grow-0 md:hidden mr-4 flex my-auto">
+        <div class="my-auto mx-2">
+          <img src="../public/img/darkMode.png" @click="darkMode" :class="{'hidden' : darkON}" class="w-10 h-10 cursor-pointer">
+          <img src="../public/img/lightMode.png" @click="lightMode" :class="{'hidden' : lightON}" class="w-10 h-10 cursor-pointer">
+        </div>
         <div class="p-3 cursor-pointer rounded-md hover:bg-sky-500 dark:hover:bg-slate-500" @click="hamburgerClick">
           <img src="../public/img/hamburgerMenuWhite.png" class="w-8">
         </div>
